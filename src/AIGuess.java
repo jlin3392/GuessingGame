@@ -41,7 +41,7 @@ public class AIGuess {
                 guess = Integer.toString(guessInt);
                 guessNum++;
                 min = min;
-                max = max - range/2;
+                max = max - range/2; 
             } else if (answer.equals("correct")) {
                 correct = true;
                 System.out.print("Yay, I guessed correctly! ");
