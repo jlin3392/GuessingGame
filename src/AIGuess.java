@@ -12,13 +12,8 @@ public class AIGuess {
 
         int max = 100;
         int min = 1;
-        int range = 50;
+        int guess = 50;
         int guessNum = 0;
-
-        double generateGuess = Math.random();
-        int guessInt = (int)(generateGuess*max + 1);
-
-        String guess = Integer.toString(guessInt);
         boolean correct = false;
 
         System.out.println("Type 'higher' if the number is higher than my guess, 'lower' if the number is lower than my guess, and 'correct' if I guess correctly.");
@@ -29,23 +24,19 @@ public class AIGuess {
             String answer = input.nextLine();
 
             if (answer.equals("higher")) {
-                generateGuess = Math.random();
-                guessInt = (int) (generateGuess * ((max - min) + 1))+ min;
-                guess = Integer.toString(guessInt);
+                min = guess;
+                guess = (int)(max - min)/2 + min;
                 guessNum++;
-                max = max;
-                min = min + range/2;
             } else if (answer.equals("lower")) {
-                generateGuess = Math.random();
-                guessInt = (int) (generateGuess * ((max - min) + 1)) + min;
-                guess = Integer.toString(guessInt);
+                max = guess;
+                guess = (int)(max - min)/2 + min;
                 guessNum++;
-                min = min;
-                max = max - range/2; 
             } else if (answer.equals("correct")) {
                 correct = true;
-                System.out.print("Yay, I guessed correctly! ");
-                System.out.print("It took me " + guessNum + " tries to guess correctly.");
+                System.out.println("Yay, I guessed correctly! ");
+                System.out.println("It took me " + guessNum + " tries to guess correctly.");
+            } else {
+                System.out.println("Please enter a valid message.");
             }
         }
     }
