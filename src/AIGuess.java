@@ -14,7 +14,7 @@ public class AIGuess {
         int min = 1;
         int guess = 50;
         int guessNum = 0;
-        boolean correct = false;
+        boolean correct = false; 
 
         System.out.println("Type 'higher' if the number is higher than my guess, 'lower' if the number is lower than my guess, and 'correct' if I guess correctly.");
 
